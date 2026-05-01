@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch.",
+    "image": "https://i.postimg.cc/Zq6gX9bH/web-dev.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "Advanced React & Next.js",
+    "instructor": "Jane Smith",
+    "duration": "15 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Master React and Next.js with real-world projects.",
+    "image": "https://i.postimg.cc/3N0vV3Wk/react.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Design Fundamentals",
+    "instructor": "Emily Johnson",
+    "duration": "12 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Learn design principles and create stunning interfaces.",
+    "image": "https://i.postimg.cc/9Xh8mQhM/uiux.jpg",
+    "category": "Design"
+  },
+  {
+    "id": 4,
+    "title": "Digital Marketing Mastery",
+    "instructor": "Michael Brown",
+    "duration": "18 hours",
+    "rating": 4.5,
+    "level": "Intermediate",
+    "description": "Grow your business using digital marketing strategies.",
+    "image": "https://i.postimg.cc/yY2k7n2r/marketing.jpg",
+    "category": "Marketing"
+  },
+  {
+    "id": 5,
+    "title": "Python for Beginners",
+    "instructor": "David Wilson",
+    "duration": "14 hours",
+    "rating": 4.9,
+    "level": "Beginner",
+    "description": "Start coding in Python with easy-to-follow lessons.",
+    "image": "https://i.postimg.cc/Vk5sX9fH/python.jpg",
+    "category": "Programming"
+  },
+  {
+    "id": 6,
+    "title": "Data Science & Machine Learning",
+    "instructor": "Sophia Lee",
+    "duration": "25 hours",
+    "rating": 4.8,
+    "level": "Advanced",
+    "description": "Learn data analysis and machine learning techniques.",
+    "image": "https://i.postimg.cc/J7m8XKqg/data-science.jpg",
+    "category": "Data Science"
+  }
+]
