@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Contact Info */}
         <div>
           <h2 className="text-xl font-semibold text-white mb-4">Contact</h2>
-          <p>Email: support@skillsphere.com</p>
+          <p>Email: assingment@skillsphere.com</p>
           <p>Phone: +880 1234-567890</p>
           <p>Location: Bangladesh</p>
         </div>

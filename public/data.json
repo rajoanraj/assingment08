@@ -1,13 +1,13 @@
-[
+ [
   {
     "id": 1,
     "title": "Complete Web Development Bootcamp",
     "instructor": "John Doe",
     "duration": "20 hours",
-    "rating": 4.8,
+    "rating": 12,
     "level": "Beginner",
     "description": "Learn full-stack web development from scratch.",
-    "image": "https://i.postimg.cc/Zq6gX9bH/web-dev.jpg",
+    "image":"https://i.ibb.co.com/gQyp0pK/istockphoto-2210588637-1024x1024.jpg",
     "category": "Development"
   },
   {
@@ -15,10 +15,10 @@
     "title": "Advanced React & Next.js",
     "instructor": "Jane Smith",
     "duration": "15 hours",
-    "rating": 4.7,
+    "rating": 10,
     "level": "Intermediate",
     "description": "Master React and Next.js with real-world projects.",
-    "image": "https://i.postimg.cc/3N0vV3Wk/react.jpg",
+    "image":"https://i.ibb.co.com/wrWj27Ps/istockphoto-1472975703-1024x1024.jpg",
     "category": "Development"
   },
   {
@@ -26,10 +26,10 @@
     "title": "UI/UX Design Fundamentals",
     "instructor": "Emily Johnson",
     "duration": "12 hours",
-    "rating": 4.6,
+    "rating": 11,
     "level": "Beginner",
     "description": "Learn design principles and create stunning interfaces.",
-    "image": "https://i.postimg.cc/9Xh8mQhM/uiux.jpg",
+    "image":"https://i.ibb.co.com/WpB1QJsx/istockphoto-482461333-1024x1024.jpg",
     "category": "Design"
   },
   {
@@ -37,10 +37,10 @@
     "title": "Digital Marketing Mastery",
     "instructor": "Michael Brown",
     "duration": "18 hours",
-    "rating": 4.5,
+    "rating": 9.5,
     "level": "Intermediate",
     "description": "Grow your business using digital marketing strategies.",
-    "image": "https://i.postimg.cc/yY2k7n2r/marketing.jpg",
+    "image":"https://i.ibb.co.com/5hQX7zKp/istockphoto-813232030-1024x1024.jpg",
     "category": "Marketing"
   },
   {
@@ -48,10 +48,10 @@
     "title": "Python for Beginners",
     "instructor": "David Wilson",
     "duration": "14 hours",
-    "rating": 4.9,
+    "rating": 8.9,
     "level": "Beginner",
     "description": "Start coding in Python with easy-to-follow lessons.",
-    "image": "https://i.postimg.cc/Vk5sX9fH/python.jpg",
+    "image":"https://i.ibb.co.com/vx6SVYN2/istockphoto-1369709301-1024x1024.jpg",
     "category": "Programming"
   },
   {
@@ -59,10 +59,10 @@
     "title": "Data Science & Machine Learning",
     "instructor": "Sophia Lee",
     "duration": "25 hours",
-    "rating": 4.8,
+    "rating": 12.5,
     "level": "Advanced",
     "description": "Learn data analysis and machine learning techniques.",
-    "image": "https://i.postimg.cc/J7m8XKqg/data-science.jpg",
+    "image":"https://i.ibb.co.com/sdbhGxkJ/istockphoto-1474513152-1024x1024.jpg",
     "category": "Data Science"
   }
 ]
