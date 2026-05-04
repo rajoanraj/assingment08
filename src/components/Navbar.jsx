@@ -2,11 +2,24 @@
 
  import Link from "next/link";
  import { useState } from "react";
+ import { useRouter } from "next/navigation";
+import { handlelogin } from 'better-auth/next-js';
+
 
  export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const router = useRouter();
+  const handlelogin = async(e) => {
+    e.preventDefault();
+
+    // navigate to home page
+    if (!error) {
+      router.push("/");
+    }
+  };
 
   return (
+    <form onSubmit={handlelogin}>
     <nav className="flex justify-between items-center px-6 py-4 bg-gray-900 text-white">
       
       {/* Logo */}
@@ -45,19 +58,20 @@
           </div>
         ) : (
           <div className="flex gap-3">
-            <button
+            <button type="submit"
               onClick={() => setIsLoggedIn(true)}
-              className="bg-blue-500 px-3 py-1 rounded"
-            >
+              className="bg-blue-500 px-3 py-1 rounded">
               Login
             </button>
-            <button className="bg-green-500 px-3 py-1 rounded">
-              Register
-            </button>
+
+          <Link href="/register"  className="bg-green-500 px-3 py-1 rounded inline-block">
+           Register
+          </Link>
           </div>
         )}
       </div>
     </nav>
+    </form>
   );
  }
 
