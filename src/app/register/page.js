@@ -1,6 +1,7 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Check } from "@gravity-ui/icons";
+// import { register } from './../../../.next/dev/server/chunks/ssr/node_modules_next_dist_build_webpack_0xev1n-._';
 import {
   Button,
   Card,
@@ -9,24 +10,48 @@ import {
   Form,
   Input,
   Label,
-  TextField,
-} from "@heroui/react";
+  TextField} from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
 
 export default function registerPage() {
-  const router = useRouter();
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
+const onSubmit = async (e) => {
+  e.preventDefault();
 
-    // navigate to login page
-    router.push("/log-in");
-  };
+  const email = e.target.email.value;
+  const name = e.target.name.value;
+  const password = e.target.password.value;
+  const image = e.target.image.value;
 
+  const payload = { email, name, password, image };
+
+  console.log("Form data:", payload);
+
+  try {
+    const res = await fetch("/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await res.json();
+
+    if (!res.ok) {
+      console.error("Registration error:", result.message || result);
+    } else {
+      console.log("Registration success:", result);
+    }
+
+  } catch (err) {
+    console.error("Unexpected error:", err);
+  }
+};
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
       <h1 className="text-center text-2xl font-bold">Registration</h1>
-
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
         <TextField isRequired name="name" type="text">
           <Label>Name</Label>
