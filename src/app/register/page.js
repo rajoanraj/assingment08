@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
+
 import { Check } from "@gravity-ui/icons";
-// import { register } from './../../../.next/dev/server/chunks/ssr/node_modules_next_dist_build_webpack_0xev1n-._';
+import Link from "next/link";
 import {
   Button,
   Card,
@@ -10,70 +10,69 @@ import {
   Form,
   Input,
   Label,
-  TextField} from "@heroui/react";
-import { authClient } from "@/lib/auth-client";
+  TextField,
+} from "@heroui/react";
 
-export default function registerPage() {
+export default function RegisterPage() {
 
-const onSubmit = async (e) => {
-  e.preventDefault();
+  const onSubmit = async (e) => {
+    e.preventDefault();
 
-  const email = e.target.email.value;
-  const name = e.target.name.value;
-  const password = e.target.password.value;
-  const image = e.target.image.value;
+    const form = e.target;
 
-  const payload = { email, name, password, image };
+    const payload = {
+      name: form.name.value,
+      email: form.email.value,
+      password: form.password.value,
+      image: form.image.value,
+    };
 
-  console.log("Form data:", payload);
+    console.log("Form data:", payload);
 
-  try {
-    const res = await fetch("/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
+    try {
 
-    const result = await res.json();
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    if (!res.ok) {
-      console.error("Registration error:", result.message || result);
-    } else {
-      console.log("Registration success:", result);
+      alert("Registration successful ✅");
+      form.reset();
+
+    } catch (err) {
+      console.error("Error:", err.message);
+      alert("Something went wrong ❌");
     }
-
-  } catch (err) {
-    console.error("Unexpected error:", err);
-  }
-};
+  };
 
   return (
-    <Card className="border mx-auto w-125 py-10 mt-5">
-      <h1 className="text-center text-2xl font-bold">Registration</h1>
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
-        <TextField isRequired name="name" type="text">
+    <Card className="border mx-auto max-w-md p-8 mt-10 shadow-lg">
+      <h1 className="text-center text-2xl font-bold mb-4">
+        Register
+      </h1>
+
+      <Form className="flex flex-col gap-4" onSubmit={onSubmit}>
+        
+        {/* Name */}
+        <TextField isRequired name="name">
           <Label>Name</Label>
           <Input placeholder="Enter your name" />
           <FieldError />
         </TextField>
 
-        <TextField isRequired name="image" type="text">
+        {/* Image */}
+        <TextField isRequired name="image">
           <Label>Image URL</Label>
-          <Input placeholder="Image URL" />
+          <Input placeholder="https://example.com/image.jpg" />
           <FieldError />
         </TextField>
 
+        {/* Email */}
         <TextField
           isRequired
           name="email"
           type="email"
           validate={(value) => {
             if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-              return "Please enter a valid email address";
+              return "Invalid email";
             }
-
             return null;
           }}
         >
@@ -82,42 +81,50 @@ const onSubmit = async (e) => {
           <FieldError />
         </TextField>
 
+        {/* Password */}
         <TextField
           isRequired
-          minLength={8}
           name="password"
           type="password"
           validate={(value) => {
-            if (value.length < 8) {
-              return "Password must be at least 8 characters";
-            }
-            if (!/[A-Z]/.test(value)) {
-              return "Password must contain at least one uppercase letter";
-            }
-            if (!/[0-9]/.test(value)) {
-              return "Password must contain at least one number";
-            }
-
+            if (value.length < 8) return "Minimum 8 characters";
+            if (!/[A-Z]/.test(value)) return "Need uppercase";
+            if (!/[0-9]/.test(value)) return "Need number";
             return null;
           }}
         >
           <Label>Password</Label>
-          <Input placeholder="Enter your password" />
+          <Input placeholder="Password" />
           <Description>
-            Must be at least 8 characters with 1 uppercase and 1 number
+            At least 8 characters, 1 uppercase, 1 number
           </Description>
           <FieldError />
         </TextField>
 
+        Buttons
         <div className="flex gap-2">
-          <Button type="submit">
+          <Button type="submit" className="w-full">
             <Check />
             Submit
           </Button>
-          <Button type="reset" variant="secondary">
+          <p className="text-center text-sm mt-4">
+           Already have an account?{" "}
+           <Link href="/login" className="text-blue-500 font-semibold">
+           Login
+            </Link>
+            </p>
+          <p className="text-center text-sm mt-4">
+           Already have an account?{" "}
+           <Link href="/login" className="text-blue-500 font-semibold">
+           Login
+            </Link>
+            </p>
+
+          <Button type="reset" variant="secondary" className="w-full">
             Reset
           </Button>
         </div>
+
       </Form>
     </Card>
   );
